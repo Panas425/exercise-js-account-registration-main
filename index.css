@@ -1,12 +1,72 @@
-button{
+body{
+    background-color: rgb(248, 248, 248);
+    justify-content: center;
+    font-family: 'Trebuchet MS', sans-serif;
+
 }
 .disabled {
     opacity: 0.6;
     cursor: not-allowed;
-  }
+
+}
+  input{
+    border-radius: 10px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-color: lightblue;
+    box-sizing: border-box;
+    &:active, &:focus { 
+        font-size: 13px;
+        border: 2px solid white;
+        outline: none; 
+      }
+}
 .valid {
-    border-color: green;
+    border: 2px solid green;
+    
+}
+h1{
+    text-align: center;
+    margin-top: 200px;
 }
 .invalid {
-    border-color: red;
+    border: 2px solid red;
+}
+.grid-container {
+    border-radius: 10px;
+    background-color: rgb(158, 158, 219);
+    justify-content: center;
+    display: grid;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    height: 100%;
+    width: 70%;
+    margin-left: 260px;
+    padding-bottom: 376px;
+    margin: auto;
+}
+.div-input{
+    border-radius: 10px;
+    background-color: rgb(170, 194, 243);
+    padding: 80px;
+    justify-content: center;
+    width: 25%;
+    margin: auto;
+}
+.button{
+    background-color: #cbcbdf;
+    border: none;
+    color: white;
+
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
+.enabled{
+    cursor: pointer;
 }

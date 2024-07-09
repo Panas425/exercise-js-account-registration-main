@@ -1,4 +1,3 @@
-
 const registrationData = {
     name: "first name last name",
     username: "username",
@@ -15,16 +14,15 @@ const submitButton = document.querySelector("button");
 
 let passwordsMatch = "";
 
-name.addEventListener("change", function(event){
+//lyssnar på inputs på textrutorna
+name.addEventListener("input", function(event){
     registrationData.name = name.value;
-    console.log(registrationData.name)
     toggleClass(name, 'valid', 'invalid', name.value);
     checkfilled()
 })
 username.addEventListener("input", function(event){
     let rUsername = username.value;
     registrationData.username = rUsername;
-    console.log(registrationData.user)
     toggleClass(username, 'valid', 'invalid', rUsername);
     checkfilled()
 })
@@ -47,22 +45,17 @@ confirmPassword.addEventListener("input", function(event){
 })
 
 
-
-
-
-
-document.querySelector('button').addEventListener('click', function(event) {
+//lyssnar på knappen
+submitButton.addEventListener('click', function(event) {
     event.preventDefault();
-
-    console.log(registrationData);
+    alert(JSON.stringify(registrationData, null, 2));
 })
 
+//kollar varje gång något skrivs i textrutorna om alla fällt är ifyllda
 function checkfilled(){
+
 const allFieldsFilled = registrationData.name && registrationData.username && registrationData.email && registrationData.password && confirmPassword.value;
 const passwordLengthValid = password.value.length > 8 && confirmPassword.value.length > 8;
-
-console.log(allFieldsFilled)
-
 
 if((allFieldsFilled && passwordsMatch && passwordLengthValid)){
     submitButton.disabled = false;
@@ -76,6 +69,7 @@ if((allFieldsFilled && passwordsMatch && passwordLengthValid)){
 
 }
 
+//ändrar klassen på textrutorna beroende på vad som har skrivits i de.
 function toggleClass(element, validClass, invalidClass, condition) {
     if (condition) {
         element.classList.add(validClass);
@@ -85,3 +79,4 @@ function toggleClass(element, validClass, invalidClass, condition) {
         element.classList.remove(validClass);
     }
 }
+checkfilled();
